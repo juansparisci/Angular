@@ -19,7 +19,7 @@ termino:string;
         this.termino = params['termino'];
       //  console.log(params['termino']);
        if(params['termino']){
-         this.heroes = this._heroesService.buscarHeroes(params['termino']);        
+         this.heroes = this._heroesService.buscarHeroes( params['termino'] );        
        }else{
            this.heroes = this._heroesService.getHeroes();
        }
