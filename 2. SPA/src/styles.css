@@ -1,6 +1,18 @@
 body{
   padding-bottom: 50px;
 }
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;
+}
+::-moz-placeholder {
+   font-style: italic;
+}
+:-ms-input-placeholder {
+   font-style: italic;
+}
 
 .main-container{
   margin-top: 20px;
