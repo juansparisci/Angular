@@ -5,9 +5,9 @@ import { NgForm} from '@angular/forms';
   selector: 'app-template',
   templateUrl: './template.component.html',
   styles: [`
-          .ng-invalid.ng-touched:not(form){
+        /*  .ng-invalid.ng-touched:not(form){
             border:1px solid red;
-          }
+          }*/
     `]
 })
 export class TemplateComponent {
