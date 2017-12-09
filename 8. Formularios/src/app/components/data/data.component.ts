@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup,FormControl,Validators} from '@angular/forms';
+import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
 
 
 @Component({
@@ -13,7 +13,8 @@ export class DataComponent {
       nombre : "Juan",
       apellido : "Sparisci"
     },
-    correo:"juan@juan.com"
+    correo:"juan@juan.com"//,
+    // pasatiempos:["Comer","Dormir","Correr"]
   }
 
   forma:FormGroup;
@@ -29,9 +30,12 @@ this.forma=new FormGroup({
                             [
                               Validators.required,
                               Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")
-                            ])
+                            ]),
+   'pasatiempos':new FormArray([
+     new FormControl('Correr', Validators.required)
+   ])
 });
-    this.forma.setValue(this.usuario);
+//    this.forma.setValue(this.usuario);
    }
    guardarCambios()
    {
@@ -47,6 +51,16 @@ this.forma=new FormGroup({
         // }
       );
 
+   }
+   agregarPasatiempo()
+   {
+
+     (<FormArray>this.forma.controls['pasatiempos'])
+        .push(
+          new FormControl
+                ("",
+                  Validators.required)
+                );
    }
 
 
