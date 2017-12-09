@@ -24,7 +24,10 @@ this.forma=new FormGroup({
   'nombreCompleto':new FormGroup({
     'nombre':new FormControl('', [Validators.required,
                                   Validators.minLength(3)]),
-    'apellido':new FormControl('', Validators.required),
+    'apellido':new FormControl('', [
+                                      Validators.required,
+                                      this.noHerrera
+                                    ]),
   }),
   'correo':new FormControl('',
                             [
@@ -33,23 +36,30 @@ this.forma=new FormGroup({
                             ]),
    'pasatiempos':new FormArray([
      new FormControl('Correr', Validators.required)
-   ])
+   ]),
+   'password1':new FormControl("", Validators.required),
+   'password2':new FormControl()
 });
 //    this.forma.setValue(this.usuario);
+this.forma.controls["password2"].setValidators(
+[
+  Validators.required,
+  this.noIgual.bind(this.forma)
+]
+);
    }
    guardarCambios()
    {
-      console.log(this.forma.value);
       console.log(this.forma);
-      this.forma.reset(
-        // {
-        //   nombreCompleto:{
-        //     nombre:"",
-        //     apellido:""
-        //   },
-        //   correo:""
-        // }
-      );
+      // this.forma.reset(
+      //   // {
+      //   //   nombreCompleto:{
+      //   //     nombre:"",
+      //   //     apellido:""
+      //   //   },
+      //   //   correo:""
+      //   // }
+      // );
 
    }
    agregarPasatiempo()
@@ -63,5 +73,22 @@ this.forma=new FormGroup({
                 );
    }
 
+   noHerrera(control:FormControl):{[s:string]:boolean}
+   {
+     if(control.value==="herrera")
+     {
+       return{'noherrera':true};
+     }
+     return null;
+   }
+   noIgual(control:FormControl):{[s:string]:boolean}
+   {
+     let forma:any=this;
+     if(control.value!=forma.controls["password1"].value)
+     {
+       return{'noiguales':true};
+     }
+     return null;
+   }
 
 }
