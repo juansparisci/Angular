@@ -44,4 +44,20 @@ export class HeroesService {
                             res=>res.json()
                           );
   }
+
+  getHeroes()
+  {
+
+    return this.http.get(this.heroesUrl)
+                      .map(
+                            res=>res.json()
+                          );
+  }
+  borrarHeroe(key$:string)
+  {
+    let url=`${this.heroeUrl}/${key$}.json`;
+    return this.http.delete(url).map(
+      d=>d.json()
+    );
+  }
 }
