@@ -24,7 +24,6 @@ export class SearchComponent {
   searchFilm() {
     this._ps.buscarPelicula(this.txtSearch).subscribe(ret => {
         this.films = ret.results;
-        console.log(this.films );
     });
   }
 

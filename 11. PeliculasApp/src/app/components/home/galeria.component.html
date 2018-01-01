@@ -1,0 +1,54 @@
+<div class="container mt-4 animated fadeIn fast">
+<h2>{{title}}</h2>
+<hr>
+<div class="row" *ngIf="films">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12 pic1" 
+            [ngStyle]="{'background-image': 'url('+(films[0] | image)+')'}"
+            [routerLink]="[ '/film/', films[0].id, 'home','' ]"
+            >
+            <div class="cardTitle">{{films[0] ? films[0].title : '...'}}</div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6 pic2" 
+              [ngStyle]="{'background-image': 'url('+(films[1] | image)+')'}"
+              [routerLink]="[ '/film/', films[1].id, 'home','' ]"
+              >
+              <div class="cardTitle">{{films[1] ? films[1].title : '...'}}</div>
+          </div>
+          <div class="col-sm-6 pic2" 
+              [ngStyle]="{'background-image': 'url('+(films[2] | image)+')'}"
+              [routerLink]="[ '/film/', films[2].id, 'home','' ]"
+              >
+              <div class="cardTitle">{{films[2] ? films[2].title : '...'}}</div>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-6 pic2" 
+                [ngStyle]="{'background-image': 'url('+(films[3] | image)+')'}"
+                [routerLink]="[ '/film/', films[3].id, 'home','' ]"
+                >
+                <div class="cardTitle">{{films[3] ? films[3].title : '...'}}</div>
+            </div>
+            <div class="col-sm-6 pic2" 
+                [ngStyle]="{'background-image': 'url('+(films[4] | image)+')'}"
+                [routerLink]="[ '/film/', films[4].id, 'home','' ]"
+                >
+                <div class="cardTitle">{{films[4] ? films[4].title : '...'}}</div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 pic1" 
+              [ngStyle]="{'background-image': 'url('+(films[5] | image)+')'}"
+              [routerLink]="[ '/film/', films[5].id, 'home','' ]"
+              >
+              <div class="cardTitle">{{films[5] ? films[5].title : '...'}}</div>
+          </div>
+        </div>
+      </div>
+  </div>  
+</div>

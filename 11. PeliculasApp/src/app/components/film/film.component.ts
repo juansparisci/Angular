@@ -18,7 +18,6 @@ export class FilmComponent {
                             ).subscribe(p => {
                                     this._ps.getFilmDetail(p.id).subscribe(retFilm => {
                                       this.film = retFilm;
-                                      console.log(this.film, 'Film' );
                                     }
                                   );
                                   this.origen = p.origen;

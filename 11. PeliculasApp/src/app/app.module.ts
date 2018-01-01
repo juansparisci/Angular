@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { FilmComponent } from './components/film/film.component';
 import { ImagePipe } from './pipes/image.pipe';
+import { GaleriaComponent } from './components/home/galeria.component';
 
 
 
@@ -24,7 +25,8 @@ import { ImagePipe } from './pipes/image.pipe';
     HomeComponent,
     SearchComponent,
     FilmComponent,
-    ImagePipe
+    ImagePipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
