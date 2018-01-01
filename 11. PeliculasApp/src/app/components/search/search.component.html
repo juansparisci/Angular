@@ -1,3 +1,20 @@
-<p>
-  search works!
-</p>
+<div class="container">
+  <div class="form-group">
+    <input type="search" 
+          [(ngModel)]="txtSearch"
+          (keyup)="searchFilm()"
+          name="txtSearch"
+          class="form-control mt-3"   placeholder="Ingrese la película que desea buscar">
+  </div>
+  <hr>
+<div class="card-columns">
+  <div class="card"  *ngFor="let film of this.films">
+      <img class="card-img-top" [src]="film | image" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{film.title}}</h5>
+        <p class="card-text"> {{(film.overview.length>150)?(film.overview | slice : 0:150 )+'..': film.overview }} </p>
+        <a [routerLink]="['/film', film.id, 'search', this.txtSearch]" class="btn btn-outline-primary btn-block">Ver mas...</a>
+      </div>
+    </div>
+  </div>
+</div>

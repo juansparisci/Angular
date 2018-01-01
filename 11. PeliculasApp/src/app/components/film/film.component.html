@@ -1,3 +1,29 @@
-<p>
-  film works!
-</p>
+<div *ngIf="film" class="container">
+  <h1>
+    {{film.title}}
+    <button type="button" [routerLink]="[ '/'+this.origen,this.termino ]"
+    class="btn btn-outline-dark pull-right mt-2">
+      Regresar
+    </button>
+  </h1>
+
+  <hr>
+  <div class="row">
+    <div class="col-sm-5">
+      <img [src]="film | image : film.poster_path" class="img-thumbnail"  alt="{{film.title}}">
+      
+    </div>
+    <div class="col-sm-7">
+      <h2>Sinopsis</h2>
+      <hr>
+      <p>{{film.overview}}</p>
+      <h2 *ngIf="film.tagline">Frase Celebre</h2>
+      <p>{{film.tagline}}</p>
+      <br>
+      Popularidad: <span class="badge badge-primary">{{film.popularity | number : '.0-0'}}/10</span>
+      <br>
+      Voto promedio: <span class="badge badge-primary">{{film.vote_average}}</span>
+    </div>
+  </div>
+  
+</div>

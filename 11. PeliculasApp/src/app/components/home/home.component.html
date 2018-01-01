@@ -1,0 +1,128 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Peliculsa App</h1>
+    <p class="lead">Aplicación de películas</p>
+  </div>
+</div>
+<!-- #region en cines-->
+<div class="container" *ngIf="theaterFilms">
+    <h2>En Cines</h2>
+    <hr>  
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-12 pic1" 
+              [ngStyle]="{'background-image': 'url('+(theaterFilms[0] | image)+')'}"
+              [routerLink]="[ '/film/', theaterFilms[0].id, 'home','' ]"
+              >
+              <div class="cardTitle">{{theaterFilms[0] ? theaterFilms[0].title : '...'}}</div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(theaterFilms[1] | image)+')'}">
+                <div class="cardTitle">{{theaterFilms[1] ? theaterFilms[1].title : '...'}}</div>
+            </div>
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(theaterFilms[2] | image)+')'}">
+                <div class="cardTitle">{{theaterFilms[2] ? theaterFilms[2].title : '...'}}</div>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="row">
+              <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(theaterFilms[3] | image)+')'}">
+                  <div class="cardTitle">{{theaterFilms[3] ? theaterFilms[3].title : '...'}}</div>
+              </div>
+              <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(theaterFilms[4] | image)+')'}">
+                  <div class="cardTitle">{{theaterFilms[4] ? theaterFilms[4].title : '...'}}</div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 pic1" [ngStyle]="{'background-image': 'url('+(theaterFilms[5] | image)+')'}">
+                <div class="cardTitle">{{theaterFilms[5] ? theaterFilms[5].title : '...'}}</div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- #endregion -->
+<br>
+<!-- #region Populares-->
+<div class="container" *ngIf="popularFilms">
+  <h2>Populares</h2>
+  <hr>  
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12 pic1" [ngStyle]="{'background-image': 'url('+(popularFilms[0] | image)+')'}">
+            <div class="cardTitle">{{popularFilms[0] ? popularFilms[0].title : '...'}}</div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularFilms[1] | image)+')'}">
+              <div class="cardTitle">{{popularFilms[1] ? popularFilms[1].title : '...'}}</div>
+          </div>
+          <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularFilms[2] | image)+')'}">
+              <div class="cardTitle">{{popularFilms[2] ? popularFilms[2].title : '...'}}</div>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularFilms[3] | image)+')'}">
+                <div class="cardTitle">{{popularFilms[3] ? popularFilms[3].title : '...'}}</div>
+            </div>
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularFilms[4] | image)+')'}">
+                <div class="cardTitle">{{popularFilms[4] ? popularFilms[4].title : '...'}}</div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 pic1" [ngStyle]="{'background-image': 'url('+(popularFilms[5] | image)+')'}">
+              <div class="cardTitle">{{popularFilms[5] ? popularFilms[5].title : '...'}}</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- #endregion -->
+<br>
+<!-- #region Populares Kids-->
+<div class="container" *ngIf="popularKidsFilms">
+    <h2>Populares para Niños</h2>
+    <hr>  
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-12 pic1" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[0] | image)+')'}">
+              <div class="cardTitle">{{popularKidsFilms[0] ? popularKidsFilms[0].title : '...'}}</div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[1] | image)+')'}">
+                <div class="cardTitle">{{popularKidsFilms[1] ? popularKidsFilms[1].title : '...'}}</div>
+            </div>
+            <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[2] | image)+')'}">
+                <div class="cardTitle">{{popularKidsFilms[2] ? popularKidsFilms[2].title : '...'}}</div>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="row">
+              <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[3] | image)+')'}">
+                  <div class="cardTitle">{{popularKidsFilms[3] ? popularKidsFilms[3].title : '...'}}</div>
+              </div>
+              <div class="col-sm-6 pic2" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[4] | image)+')'}">
+                  <div class="cardTitle">{{popularKidsFilms[4] ? popularKidsFilms[4].title : '...'}}</div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 pic1" [ngStyle]="{'background-image': 'url('+(popularKidsFilms[5] | image)+')'}">
+                <div class="cardTitle">{{popularKidsFilms[5] ? popularKidsFilms[5].title : '...'}}</div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- #endregion -->
+  
+  
