@@ -12,7 +12,6 @@ export class CargaComponent {
   archivos: FileItem[] = [];
   constructor(public cargaImagenes: CargaImagenesService) { }
   archivoSobreDropZone( e: any ) {
-    console.log(e);
     this.estaSobreDropZone = e;
   }
   cargarImagenesFirebase() {
